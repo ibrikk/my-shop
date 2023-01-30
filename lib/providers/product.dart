@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 class Product with ChangeNotifier {
   final String id;
@@ -6,18 +6,19 @@ class Product with ChangeNotifier {
   final String description;
   final double price;
   final String imageUrl;
-  bool isFavourite;
+  bool isFavorite;
 
-  Product(
-      {required this.id,
-      required this.title,
-      required this.description,
-      required this.price,
-      required this.imageUrl,
-      this.isFavourite = false});
+  Product({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.price,
+    required this.imageUrl,
+    this.isFavorite = false,
+  });
 
-  void toggleFavouriteStatus() {
-    isFavourite = !isFavourite;
+  void toggleFavoriteStatus() {
+    isFavorite = !isFavorite;
     notifyListeners();
   }
 }
